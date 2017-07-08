@@ -1,8 +1,3 @@
-# RaspberryPi3_UltimateImage
-RaspberryPi3 image with wifii , Qt5 open gl, bluetooth , nodejs git and more
-
-The scripts on the root will be copied to the output/target by post-build.sh
-
 The document that explain this build:
 https://github.com/EliArad/MyDocuments/blob/master/Linux/Buildroot/Raspberrypi3ultimateimage.odt
 
@@ -14,4 +9,3 @@ qt5
 bluetooth
 gpio
 wifi
-
