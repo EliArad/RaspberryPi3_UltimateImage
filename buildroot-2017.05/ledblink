@@ -1,0 +1,8 @@
+#!/bin/sh
+gpio export 23 out
+while true; do
+gpio write 4 0
+sleep 1
+gpio write 4 1
+sleep 1
+done

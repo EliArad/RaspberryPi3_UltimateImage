@@ -1,0 +1,38 @@
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+export QT_QPA_FONTDIR=/usr/share/fonts/dejavu 
+export QT_QPA_ENABLE_TERMINAL_KEYBOARD=1 
+export QT_QPA_EGLFS_INTEGRATION=eglfs_kms
+export QT_LOGGING_RULES=qt.qpa.*=true 
+export QT_QPA_PLATFORM=eglfs 
+export QT_QPA_EGLFS_PHYSICAL_WIDTH=100 
+export QT_QPA_EGLFS_PHYSICAL_HEIGHT=100 
+
+
+
+if [ "$PS1" ]; then
+	if [ "`id -u`" -eq 0 ]; then
+		export PS1='# '
+	else
+		export PS1='$ '
+	fi
+fi
+
+export PAGER='/bin/more '
+export EDITOR='/bin/vi'
+
+export GIT_SSL_NO_VERIFY=1
+
+# Source configuration files from /etc/profile.d
+for i in /etc/profile.d/*.sh ; do
+	if [ -r "$i" ]; then
+		. $i
+	fi
+	unset i
+done
+
+
+hciattach /dev/ttyAMA0 bcm43xx 115200 noflow - & 
+
+chmod +x /etc/ledblink
+/etc/ledblink &
