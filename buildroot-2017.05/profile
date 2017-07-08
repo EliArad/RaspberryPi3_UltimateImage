@@ -31,8 +31,8 @@ for i in /etc/profile.d/*.sh ; do
 	unset i
 done
 
-
-hciattach /dev/ttyAMA0 bcm43xx 115200 noflow - & 
+chmod +x /etc/hci
+/etc/hci
 
 chmod +x /etc/ledblink
 /etc/ledblink &

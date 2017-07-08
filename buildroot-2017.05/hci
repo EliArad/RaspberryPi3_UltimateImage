@@ -1,0 +1,3 @@
+#!/bin/sh
+hciattach /dev/ttyAMA0 bcm43xx 115200 noflow - 
+hciattach /dev/ttyAMA0 bcm43xx 115200 noflow - 
